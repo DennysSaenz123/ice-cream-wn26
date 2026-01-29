@@ -10,6 +10,8 @@
    <link rel="icon"  href="/images/ice-cream-cone-icon.png">
    <!-- stylesheet -->
    <link rel="stylesheet" href="/styles/ice-cream-styles.css"> 
+   <!-- scripts -->
+    <script src="/js/ice-cream.js"></script>
 </head>
 
 <body>
@@ -24,10 +26,12 @@
             <legend>Personal Information</legend>
             <!-- name -->
             <label for="name">Name:</label>
+            <span class="err" id="err-name">Name is required.</span>
             <input type="text" id="name" name="name">
             
             <!-- email -->
             <label for="email">Email:</label>
+            <span class="err" id="err-email">Email is required.</span>
             <input type="text" id="email" name="email">
             </fieldset>
             
@@ -37,6 +41,7 @@
                 
             <!-- flavor -->
             <label for="flavor">Choose your flavor:</label>
+            <span class="err" id="err-flavor">Please select a flavor.</span>
             <select id="flavor" name="flavor">
                 <option value="none">Select one</option> 
                 <option value="vanilla">Vanilla</option>
@@ -48,6 +53,7 @@
 
             <!-- cone type -->
             <label>Choose your cone:</label>
+            <span class="err" id="err-cone">Please select a cone type.</span>
             <br>
             <label for="wafflecone">
                 <input type="radio" id="wafflecone" value="wafflecone" name="method">Waffle Cone
