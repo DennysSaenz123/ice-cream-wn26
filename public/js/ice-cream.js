@@ -24,7 +24,7 @@ document.getElementById("ice-cream-form").onsubmit = () => {
         document.getElementById("err-flavor").style.display = "block";
         isValid = false;
     }
-    if (!wafflecone && !sugarcone && !cup) {
+    if (!wafflecone.checked && !sugarcone.checked && !cup.checked) {
         document.getElementById("err-cone").style.display = "block";
         isValid = false;
     }
