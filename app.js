@@ -3,12 +3,10 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }))
-// server port
-const PORT = 3003;
-
-// static file serving
-// tells express to use files in "public" directory
 app.use(express.static('public'));
+
+const PORT = 3003;
+const orders = [];
 
 // main route ('/')
 app.get('/', (req, res) => {
@@ -17,12 +15,32 @@ app.get('/', (req, res) => {
 });
 
 app.post('/submit-order', (req, res) => {
-    const order = {
-
+    let user = {
+        name: req.body.name,
+        email: req.body.email,
+        flavor: req.body.flavor,
+        method: req.body.method,
+        toppings: req.body.toppings,
+        comments: req.body.comments
     }
 
-    res.sendFile(`${import.meta.dirname}/views/confirm.html`);
-})
+    const order = {
+        name: req.body.name,
+        email: req.body.email,
+        flavor: req.body.flavor,
+        method: req.body.method,
+        toppings: req.body.toppings,
+        comments: req.body.comments
+    }
+
+    orders.push(order);
+
+    res.render('confirm', { user });
+});
+
+app.get('/admin', (rreq, res) => {
+    res.send(orders);
+});
 
 // start server, listen on PORT
 app.listen(PORT, () => {
