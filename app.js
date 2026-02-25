@@ -5,7 +5,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'));
 
-const PORT = 3003;
+const PORT = 3004;
 const orders = [];
 
 // main route ('/')
@@ -45,4 +45,5 @@ app.get('/admin', (req, res) => {
 // start server, listen on PORT
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
+
 });
