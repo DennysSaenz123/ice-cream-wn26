@@ -38,8 +38,8 @@ app.post('/submit-order', (req, res) => {
     res.render('confirm', { user });
 });
 
-app.get('/admin', (rreq, res) => {
-    res.send(orders);
+app.get('/admin', (req, res) => {
+    res.render('admin', { orders });
 });
 
 // start server, listen on PORT
