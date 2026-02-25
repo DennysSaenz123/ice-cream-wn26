@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/submit-order', (req, res) => {
-    let user = {
+    const order = {
         name: req.body.name,
         email: req.body.email,
         flavor: req.body.flavor,
@@ -24,13 +24,13 @@ app.post('/submit-order', (req, res) => {
         comments: req.body.comments
     }
 
-    const order = {
-        name: req.body.name,
-        email: req.body.email,
-        flavor: req.body.flavor,
-        method: req.body.method,
-        toppings: req.body.toppings,
-        comments: req.body.comments
+    let user = {
+        name: order.name,
+        email: order.email,
+        flavor: order.flavor,
+        method: order.method,
+        toppings: order.toppings,
+        comments: order.comments
     }
 
     orders.push(order);

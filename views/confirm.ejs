@@ -6,8 +6,18 @@
     <title>Thank You</title>
 </head>
 <body>
-    <h1>Your order is submitted, thank you!</h1>
-    
+    <h1>Thank you for your order, <%= user.name %>!</h1>
+    <h2>Order Details</h2>
+    <p>Name: <%= user.name %></p>
+    <p>Email: <%= user.email %></p>
+    <p>Cone Type: <%= user.method %></p>
+    <p>Flavor: <%= user.flavor %></p>
+    <p>Toppings: 
+        <%= Array.isArray(user.toppings) ?
+            user.toppings.join(', ') :
+            "No toppings" %>
+    </p>
+    <p>Comment: <%= user.comments %></p>
     <a href="/">Order another?</a>
 </body>
 </html>
