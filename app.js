@@ -11,7 +11,7 @@ const orders = [];
 // main route ('/')
 app.get('/', (req, res) => {
     // sends home.html file to client
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render('home');
 });
 
 app.post('/submit-order', (req, res) => {
@@ -47,3 +47,4 @@ app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 
 });
+
